@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('masjid', function () {
-//     return view('masjid');
-// });
+Route::resource('/', 'HomeController@index');
+Route::resource('/masjid', 'MasjidController@index');
+Route::resource('/mubaligh', 'MubalighController@index');
+Route::resource('/kajian', 'KajianController@index');
 
-Route::resource('/', 'HomeController');
-Route::resource('/masjid', 'MasjidController');
-Route::resource('/mubaligh', 'MubalighController');
-Route::resource('/kajian', 'KajianController');
+Auth::routes();
+
+Route::get('/admin', 'AdminController@index')->name('home');
