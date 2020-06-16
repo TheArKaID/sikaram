@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/masjid', 'AdminController@indexmasjid');
     Route::get('/admin/masjid/create', 'AdminController@createmasjid');
     Route::post('/admin/masjid', 'AdminController@storemasjid');
+    Route::get('/admin/masjid/{masjid}', 'AdminController@showmasjid');
+    Route::patch('/admin/masjid/{masjid}', 'AdminController@updatemasjid');
 
     // Mubaligh Section
     Route::get('/admin/mubaligh', 'AdminController@mubaligh');
