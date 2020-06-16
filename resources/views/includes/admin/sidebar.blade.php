@@ -39,7 +39,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./masjid.html" class="nav-link">
+                <a href="/admin/masjid" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>MASJID</p>
                 </a>
