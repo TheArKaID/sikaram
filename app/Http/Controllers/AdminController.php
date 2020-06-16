@@ -61,4 +61,10 @@ class AdminController extends Controller
                 break;
         }
     }
+
+    public function destroymasjid(Masjid $masjid)
+    {
+        Masjid::destroy($masjid -> id);
+        return redirect('/admin/masjid') ->with ('status', 'Data Masjid Berhasil Dihapus');
+    }
 }
