@@ -13,9 +13,20 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function masjid()
+    public function indexmasjid()
     {
         $masjid = Masjid::all();
-        return view('admin.masjid', ['masjid' => $masjid]);
+        return view('admin.masjid.index', ['masjid' => $masjid]);
+    }
+
+    public function createmasjid()
+    {
+        return view('admin.masjid.create');
+    }
+
+    public function storemasjid(Request $request)
+    {
+        Masjid::create($request->all());
+        return redirect('/admin/masjid') ->with ('status', 'Data masjid berhasil ditambahkan');
     }
 }
