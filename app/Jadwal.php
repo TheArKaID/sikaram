@@ -34,4 +34,13 @@ class Jadwal extends Model
      */
     protected $fillable = ['id_mubaligh', 'id_masjid', 'waktu', 'tema', 'created_at', 'updated_at'];
 
+    public function masjid()
+{
+    // return $this->belongsTo(\App\Masjid::class);
+    return $this->belongsTo(\App\Masjid::class, 'id_masjid');
+}
+    public function mubaligh(){
+        return $this->belongsTo(\App\Mubaligh::class, 'id_mubaligh');
+    }
+
 }

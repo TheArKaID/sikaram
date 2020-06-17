@@ -34,6 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/mubaligh', 'AdminController@mubaligh');
 
     // Jadwal Section
-    Route::get('/admin/jadwal', 'AdminController@jadwal');
     Route::get('/admin/jadwal', 'AdminController@indexjadwal');
+    Route::get('/admin/jadwal/create', 'AdminController@createjadwal');
+    Route::get('/admin/jadwal/{jadwal}', 'AdminController@showjadwal');
+    Route::post('/admin/jadwal', 'AdminController@storejadwal');
 });
