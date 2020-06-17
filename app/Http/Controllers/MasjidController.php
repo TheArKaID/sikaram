@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Masjid;
 
 class MasjidController extends Controller
 {
@@ -13,7 +15,8 @@ class MasjidController extends Controller
      */
     public function index()
     {
-        return view('pages.masjid');
+        $masjids = Masjid::all();
+        return view('pages.masjid', ['masjids' => $masjids]);
     }
 
     /**
