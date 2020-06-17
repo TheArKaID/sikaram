@@ -34,11 +34,11 @@ Route::group(['middleware' => 'auth'], function () {
     // Mubaligh Section
     Route::get('/admin/mubaligh', 'AdminController@mubaligh');
     Route::get('/admin/mubaligh', 'AdminController@indexmubaligh');
-    // Route::get('/admin/mubaligh/create', 'AdminController@createmubaligh');
-    // Route::post('/admin/mubaligh', 'AdminController@storemubaligh');
+    Route::get('/admin/mubaligh/create', 'AdminController@createmubaligh');
+    Route::post('/admin/mubaligh', 'AdminController@storemubaligh');
     // Route::delete('/admin/mubaligh/{mubaligh}', 'AdminController@destroymubaligh');
     Route::patch('/admin/mubaligh/{mubaligh}', 'AdminController@updatemubaligh');
-    
+
     Route::get('/admin/mubaligh/{mubaligh}', 'AdminController@showmubaligh');
 
     // Jadwal Section
