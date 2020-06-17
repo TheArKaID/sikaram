@@ -34,10 +34,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/mubaligh', 'AdminController@mubaligh');
     Route::get('/admin/mubaligh', 'AdminController@indexmubaligh');
     // Route::get('/admin/mubaligh/create', 'AdminController@createmubaligh');
-    // Route::get('/admin/mubaligh/{mubaligh}', 'AdminController@showmubaligh');
     // Route::post('/admin/mubaligh', 'AdminController@storemubaligh');
     // Route::delete('/admin/mubaligh/{mubaligh}', 'AdminController@destroymubaligh');
-    // Route::patch('/admin/mubaligh/{mubaligh}', 'AdminController@updatemubaligh');
+    Route::patch('/admin/mubaligh/{mubaligh}', 'AdminController@updatemubaligh');
+    
+    Route::get('/admin/mubaligh/{mubaligh}', 'AdminController@showmubaligh');
 
     // Jadwal Section
     Route::get('/admin/jadwal', 'AdminController@jadwal');
