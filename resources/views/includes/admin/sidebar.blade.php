@@ -45,7 +45,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./MUBALIGH.html" class="nav-link">
+                <a href="/admin/mubaligh" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>MUBALIGH</p>
                 </a>

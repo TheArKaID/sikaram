@@ -27,6 +27,15 @@ class AdminController extends Controller
         return view('admin.jadwal.index', ['jadwal' => $jadwal]);
     }
 
+    public function indexmubaligh()
+    {
+        $mubaligh = Mubaligh::all();
+        return view('admin.mubaligh.index', ['mubaligh' => $mubaligh]);
+    }
+
+
+
+
     public function createmasjid()
     {
         return view('admin.masjid.create');
@@ -39,6 +48,11 @@ class AdminController extends Controller
         return view('admin.jadwal.create', ['masjid' => $masjid, 'mubaligh' => $mubaligh]);
     }
 
+    public function createmubaligh()
+    {
+        return view('admin.mubaligh.create');
+    }
+  
     public function storemasjid(Request $request)
     {
         switch ($request->input('action')) {
@@ -66,7 +80,21 @@ class AdminController extends Controller
                 break;
         }
     }
-
+  
+    public function storemubaligh(Request $request)
+    {
+        switch ($request->input('action')) {
+            case 'tambah':
+                Mubaligh::create($request->all());
+                return redirect('/admin/mubaligh') ->with ('status', 'Data Mubaligh berhasil ditambahkan');
+                break;
+    
+            case 'kembali':
+                return redirect('/admin/mubaligh');
+                break;
+        }
+    }
+            
     public function showmasjid(Masjid $masjid)
     {
         return view('admin.masjid.edit', compact ('masjid'));
@@ -75,6 +103,12 @@ class AdminController extends Controller
     public function showjadwal(Jadwal $jadwal)
     {
         return view('admin.jadwal.edit', compact ('jadwal'));
+    }
+
+    
+    public function showmubaligh(Mubaligh $mubaligh)
+    {
+        return view('admin.mubaligh.edit', compact ('mubaligh'));
     }
 
     public function updatemasjid(Request $request, Masjid $masjid)
@@ -96,9 +130,34 @@ class AdminController extends Controller
         }
     }
 
+    public function updatemubaligh(Request $request, Mubaligh $mubaligh)
+    {
+        switch ($request->input('action')) {
+            case 'edit':
+                Mubaligh::where('id', $mubaligh->id)
+                ->update([
+                'nama' => $request->nama,
+                'nohp' => $request->nohp,
+                'alamat' => $request->alamat
+                ]);
+                return redirect('/admin/mubaligh') ->with ('status', 'Data Mubaligh Berhasil Diubah!');
+                break;
+    
+            case 'kembali':
+                return redirect('/admin/mubaligh');
+                break;
+        }
+    }
+
     public function destroymasjid(Masjid $masjid)
     {
         Masjid::destroy($masjid -> id);
         return redirect('/admin/masjid') ->with ('status', 'Data Masjid Berhasil Dihapus');
+    }
+    
+    public function destroymubaligh(Mubaligh $mubaligh)
+    {
+        Mubaligh::destroy($mubaligh -> id);
+        return redirect('/admin/mubaligh') ->with ('status', 'Data Mubaligh Berhasil Dihapus');
     }
 }

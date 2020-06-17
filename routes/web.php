@@ -18,6 +18,7 @@ Route::resource('/masjid', 'MasjidController');
 Route::resource('/mubaligh', 'MubalighController');
 Route::resource('/kajian', 'KajianController');
 
+
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin', 'AdminController@index')->name('home');
@@ -32,6 +33,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Mubaligh Section
     Route::get('/admin/mubaligh', 'AdminController@mubaligh');
+    Route::get('/admin/mubaligh', 'AdminController@indexmubaligh');
+    Route::get('/admin/mubaligh/create', 'AdminController@createmubaligh');
+    Route::post('/admin/mubaligh', 'AdminController@storemubaligh');
+    Route::delete('/admin/mubaligh/{mubaligh}', 'AdminController@destroymubaligh');
+    Route::patch('/admin/mubaligh/{mubaligh}', 'AdminController@updatemubaligh');
+    Route::get('/admin/mubaligh/{mubaligh}', 'AdminController@showmubaligh');
 
     // Jadwal Section
     Route::get('/admin/jadwal', 'AdminController@indexjadwal');
