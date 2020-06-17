@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Mubaligh;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -13,7 +15,9 @@ class MubalighController extends Controller
      */
     public function index()
     {
-        return view('pages.Mubaligh');
+        $mubalighs = Mubaligh::all();
+
+        return view('pages.Mubaligh', ['mubaligh' => $mubalighs]);
     }
 
     /**
