@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jadwal;
 use Illuminate\Http\Request;
 
 class KajianController extends Controller
@@ -13,7 +14,8 @@ class KajianController extends Controller
      */
     public function index()
     {
-        return view('pages.Kajian');
+        $kajians = Jadwal::all();
+        return view('pages.kajian', ['kajians' => $kajians]);
     }
 
     /**
@@ -43,9 +45,9 @@ class KajianController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Jadwal $kajian)
     {
-        //
+        return view('kajian.show', compact('kajian'));
     }
 
     /**
