@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Jadwal <a href="/admin/jadwal/create" type="button" class="btn btn-info">+ Data</a></h1>
+            <h1 class="m-0 text-dark">Mubaligh <a href="/admin/mubaligh/create" type="button" class="btn btn-info">+ Data</a></h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
         @if (session('status'))
@@ -32,24 +32,22 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th>NO</th>
-                                    <th>MUBALIGH</th>
-                                    <th>MASJID</th>
-                                    <th>WAKTU</th>
-                                    <th>TEMA</th>
+                                    <th>NAMA</th>
+                                    <th>No HP</th>
+                                    <th>ALAMAT</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             @for ($i = 1; $i <= 1; $i++)
-                            @foreach ($jadwal as $contain)
+                            @foreach ($mubaligh as $contain)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td>{{$contain->mubaligh->nama}}</td>
-                                <td>{{$contain->masjid->nama}}</td>
-                                <td>{{$contain->waktu}}</td>
-                                <td>{{$contain->tema}}</td>
+                                <td>{{$contain->nama}}</td>
+                                <td>{{$contain->nohp}}</td>
+                                <td>{{$contain->alamat}}</td>
                                 <td>
-                                    <a class="btn btn-warning btn-sm" href="/admin/jadwal/{{$contain -> id}}">Edit</a>
-                                    <form action="/admin/jadwal/{{ $contain -> id }}" method="POST" class="d-inline">
+                                    <a class="btn btn-warning btn-sm" href="/admin/mubaligh/{{$contain -> id}}">Edit</a>
+                                    <form action="/admin/mubaligh/{{ $contain -> id }}" method="POST" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>

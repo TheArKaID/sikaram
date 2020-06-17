@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Masjid;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Masjid;
 
 class MasjidController extends Controller
 {
@@ -83,4 +84,7 @@ class MasjidController extends Controller
     {
         //
     }
+    public function search(Request $request)     {   $cari = $request->search;           $post = DB::table('students')         ->where('nama','like',"%".$cari."%")         ->paginate(); 
+ 
+        return view('students.index',['students' => $post]);     }
 }
