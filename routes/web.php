@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Route::post('/admin/mubaligh', 'AdminController@storemubaligh');
     // Route::delete('/admin/mubaligh/{mubaligh}', 'AdminController@destroymubaligh');
     Route::patch('/admin/mubaligh/{mubaligh}', 'AdminController@updatemubaligh');
+    
     Route::get('/admin/mubaligh/{mubaligh}', 'AdminController@showmubaligh');
 
     // Jadwal Section
