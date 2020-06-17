@@ -35,4 +35,5 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Jadwal Section
     Route::get('/admin/jadwal', 'AdminController@jadwal');
+    Route::get('/admin/jadwal', 'AdminController@indexjadwal');
 });
