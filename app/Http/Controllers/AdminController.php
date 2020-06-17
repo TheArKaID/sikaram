@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Masjid;
+use App\Jadwal;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -17,6 +18,12 @@ class AdminController extends Controller
     {
         $masjid = Masjid::all();
         return view('admin.masjid.index', ['masjid' => $masjid]);
+    }
+
+    public function indexjadwal()
+    {
+        $jadwal = Jadwal::all();
+        return view('admin.jadwal.index', ['jadwal' => $jadwal]);
     }
 
     public function createmasjid()
