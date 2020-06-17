@@ -160,4 +160,10 @@ class AdminController extends Controller
         Mubaligh::destroy($mubaligh -> id);
         return redirect('/admin/mubaligh') ->with ('status', 'Data Mubaligh Berhasil Dihapus');
     }
+
+    public function destroyjadwal(jadwal $jadwal)
+    {
+        Jadwal::destroy($jadwal -> id);
+        return redirect('/admin/jadwal') ->with ('status', 'Data Jadwal Berhasil Dihapus');
+    }
 }

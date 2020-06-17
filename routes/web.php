@@ -45,4 +45,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/jadwal/create', 'AdminController@createjadwal');
     Route::get('/admin/jadwal/{jadwal}', 'AdminController@showjadwal');
     Route::post('/admin/jadwal', 'AdminController@storejadwal');
+    Route::delete('/admin/jadwal/{jadwal}', 'AdminController@destroyjadwal');
 });
