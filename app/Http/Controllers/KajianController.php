@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Jadwal;
 
 class KajianController extends Controller
 {
@@ -13,7 +14,7 @@ class KajianController extends Controller
      */
     public function index()
     {
-        return view('pages.Kajian');
+        return view('pages.Kajian',['students=> $students']);
     }
 
     /**
