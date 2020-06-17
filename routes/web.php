@@ -38,10 +38,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/admin/mubaligh', 'AdminController@storemubaligh');
     Route::delete('/admin/mubaligh/{mubaligh}', 'AdminController@destroymubaligh');
     Route::patch('/admin/mubaligh/{mubaligh}', 'AdminController@updatemubaligh');
-
     Route::get('/admin/mubaligh/{mubaligh}', 'AdminController@showmubaligh');
 
     // Jadwal Section
-    Route::get('/admin/jadwal', 'AdminController@jadwal');
     Route::get('/admin/jadwal', 'AdminController@indexjadwal');
+    Route::get('/admin/jadwal/create', 'AdminController@createjadwal');
+    Route::get('/admin/jadwal/{jadwal}', 'AdminController@showjadwal');
+    Route::post('/admin/jadwal', 'AdminController@storejadwal');
 });

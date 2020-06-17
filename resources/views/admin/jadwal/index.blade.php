@@ -43,8 +43,8 @@
                             @foreach ($jadwal as $contain)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td>{{$contain->id_mubaligh}}</td>
-                                <td>{{$contain->id_masjid}}</td>
+                                <td>{{$contain->mubaligh->nama}}</td>
+                                <td>{{$contain->masjid->nama}}</td>
                                 <td>{{$contain->waktu}}</td>
                                 <td>{{$contain->tema}}</td>
                                 <td>
