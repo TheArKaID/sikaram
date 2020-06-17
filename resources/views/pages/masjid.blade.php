@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <h2 class="mt-10">Daftar KAJIAN</h2>
+            <h2 class="mt-10">Daftar Masjid</h2>
 
             <div class="row">     
             <div class="col-md-8"> 
