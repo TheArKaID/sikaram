@@ -102,7 +102,9 @@ class AdminController extends Controller
     
     public function showjadwal(Jadwal $jadwal)
     {
-        return view('admin.jadwal.edit', compact ('jadwal'));
+        $masjid = Masjid::pluck('nama', 'id');
+        $mubaligh = Mubaligh::pluck('nama', 'id');
+        return view('admin.jadwal.edit', compact ('jadwal'), ['masjid' => $masjid, 'mubaligh' => $mubaligh]);
     }
 
     
@@ -145,6 +147,26 @@ class AdminController extends Controller
     
             case 'kembali':
                 return redirect('/admin/mubaligh');
+                break;
+        }
+    }
+
+    public function updatejadwal(Request $request, Jadwal $jadwal)
+    {
+        switch ($request->input('action')) {
+            case 'edit':
+                Jadwal::where('id', $jadwal->id)
+                ->update([
+                'id_mubaligh' => $request->id_mubaligh,
+                'id_masjid' => $request->id_masjid,
+                'waktu' => $request->waktu,
+                'tema' => $request->tema
+                ]);
+                return redirect('/admin/jadwal') ->with ('status', 'Data Jadwal Berhasil Diubah!');
+                break;
+    
+            case 'kembali':
+                return redirect('/admin/jadwal');
                 break;
         }
     }
