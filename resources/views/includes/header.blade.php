@@ -16,7 +16,7 @@
 <ul class="nav navbar-nav">
 <li><a href="/">Home</a></li>
 <li><a href="/masjid">Masjid</a></li>
-<li><a href="/kajian">Kajian</a></li>
+<li><a href="/kajian">Jadwal</a></li>
 <li><a href="/mubaligh">Mubaligh</a></li>
 </ul>
 </div>
