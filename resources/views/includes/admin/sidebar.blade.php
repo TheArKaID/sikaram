@@ -33,12 +33,6 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/jadwal" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>JADWAL</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/admin/masjid" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>MASJID</p>
@@ -48,6 +42,12 @@
                 <a href="/admin/mubaligh" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>MUBALIGH</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/jadwal" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>JADWAL</p>
                 </a>
               </li>
             </ul>
