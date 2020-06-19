@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-group">
                       <label for="nama">Jam</label>
-                      <input type="date" class="form-control" id="jam" name="jam">
+                      <input type="time" class="form-control" id="jam" name="jam">
                     </div>
                     <div class="form-group">
                       <label for="nama">Tema</label>
