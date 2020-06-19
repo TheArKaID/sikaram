@@ -73,7 +73,7 @@ class AdminController extends Controller
                 $jam = $input['jam'];
                 $date = $tanggal ." Jam ". $jam;
                 $input['waktu'] = $this->convertMonth($date);
-                $input['waktu'] = $this->convertDay($date);
+                $input['waktu'] = $this->convertDay($input['waktu']);
 
                 Jadwal::create($input);
                 return redirect('/admin/jadwal') ->with ('status', 'Jadwal Kajian berhasil ditambahkan');
@@ -164,7 +164,7 @@ class AdminController extends Controller
                 $jam = $input['jam'];
                 $date = $tanggal ." Jam ". $jam;
                 $input['waktu'] = $this->convertMonth($date);
-                $input['waktu'] = $this->convertDay($date);
+                $input['waktu'] = $this->convertDay($input['waktu']);
 
                 Jadwal::where('id', $jadwal->id)
                 ->update([
