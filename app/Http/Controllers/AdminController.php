@@ -72,7 +72,7 @@ class AdminController extends Controller
                 $tanggal = date_format(date_create($input['tanggal']), "D, d M Y");
                 $jam = $input['jam'];
                 $date = $tanggal ." Jam ". $jam;
-                $input['waktu'] = $date;
+                $input['waktu'] = $this->convertMonth($date);
 
                 Jadwal::create($input);
                 return redirect('/admin/jadwal') ->with ('status', 'Jadwal Kajian berhasil ditambahkan');
@@ -162,7 +162,7 @@ class AdminController extends Controller
                 $tanggal = date_format(date_create($input['tanggal']), "D, d M Y");
                 $jam = $input['jam'];
                 $date = $tanggal ." Jam ". $jam;
-                $input['waktu'] = $date;
+                $input['waktu'] = $this->convertMonth($date);
 
                 Jadwal::where('id', $jadwal->id)
                 ->update([
@@ -196,5 +196,29 @@ class AdminController extends Controller
     {
         Jadwal::destroy($jadwal -> id);
         return redirect('/admin/jadwal') ->with ('status', 'Data Jadwal Berhasil Dihapus');
+    }
+
+    public function convertMonth($data)
+    {
+        $bulans = [
+            'Jan' => 'Januari',
+            'Feb' => 'Februari',
+            'Mar' => 'Maret',
+            'Apr' => "April",
+            'May' => "Mei",
+            'Jun' => "Juni",
+            'Jul' => "Juli",
+            'Aug' => "Agustus",
+            'Sep' => "September",
+            'Oct' => "Oktober",
+            'Nov' => "November",
+            'Dec' => "Desember"
+        ];
+        $result = "";
+        foreach ($bulans as $old => $new) {
+            if(strpos($data, $key) !== false){
+                return $result = str_replace($key, $value, $data);
+            }
+        }
     }
 }
