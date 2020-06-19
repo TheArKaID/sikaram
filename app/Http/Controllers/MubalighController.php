@@ -17,7 +17,7 @@ class MubalighController extends Controller
     {
         $mubalighs = Mubaligh::all();
 
-        return view('pages.Mubaligh', ['mubaligh' => $mubalighs]);
+        return view('pages.mubaligh', ['mubaligh' => $mubalighs]);
     }
 
     /**
