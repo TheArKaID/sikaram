@@ -12,7 +12,11 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $masjid = Masjid::all()->count();
+        $mubaligh = Mubaligh::all()->count();
+        $jadwal = Jadwal::all()->count();
+
+        return view('admin.dashboard', ['masjid' => $masjid, 'mubaligh' => $mubaligh, 'jadwal' => $jadwal]);
     }
 
     public function indexmasjid()
