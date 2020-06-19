@@ -33,9 +33,6 @@ class AdminController extends Controller
         return view('admin.mubaligh.index', ['mubaligh' => $mubaligh]);
     }
 
-
-
-
     public function createmasjid()
     {
         return view('admin.masjid.create');
@@ -57,8 +54,15 @@ class AdminController extends Controller
     {
         switch ($request->input('action')) {
             case 'tambah':
-                Masjid::create($request->all());
-                return redirect('/admin/masjid') ->with ('status', 'Data masjid berhasil ditambahkan');
+                $input = $request->all();
+                $tanggal = date_format(date_create($input->tanggal), "D, d M Y");
+                $jam = $input->jam;
+                $date = $tanggal ." Jam ". $jam;
+                $input->waktu = $date;
+                
+                Masjid::create($input);
+
+                return redirect('/admin/masjid') ->with ('status', 'Jadwal Kajian berhasil ditambahkan');
                 break;
     
             case 'kembali':

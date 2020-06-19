@@ -33,8 +33,12 @@
                       <!-- {!! Form::select('nama', $masjid, null,['class' => 'form-control'] ) !!} -->
                     </div>
                     <div class="form-group">
-                      <label for="nama">Waktu</label>
-                      <input type="date" class="form-control" id="waktu" name="waktu">
+                      <label for="nama">Tanggal</label>
+                      <input type="date" class="form-control" id="tanggal" name="tanggal">
+                    </div>
+                    <div class="form-group">
+                      <label for="nama">Jam</label>
+                      <input type="date" class="form-control" id="jam" name="jam">
                     </div>
                     <div class="form-group">
                       <label for="nama">Tema</label>
