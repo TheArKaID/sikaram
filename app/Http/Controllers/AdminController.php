@@ -216,8 +216,8 @@ class AdminController extends Controller
         ];
         $result = "";
         foreach ($bulans as $old => $new) {
-            if(strpos($data, $key) !== false){
-                return $result = str_replace($key, $value, $data);
+            if(strpos($data, $old) !== false){
+                return $result = str_replace($old, $new, $data);
             }
         }
     }
