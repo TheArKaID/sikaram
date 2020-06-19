@@ -40,8 +40,8 @@
                                     <th>NO</th>
                                     <th>idmubaligh</th>
                                     <th>idmasjid</th>
-                                    <th>KONTAK</th>
-                                    <th>ALAMAT</th>
+                                    <th>waktu</th>
+                                    <th>tema</th>
                                 </tr>
                             </thead>
                             @for ($i = 1; $i <= 1; $i++)

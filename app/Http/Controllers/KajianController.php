@@ -84,11 +84,11 @@ class KajianController extends Controller
     {
         //
     }
-    public function search(Request $request)    
+    public function searchkajian(Request $request)    
      {   $cari = $request->search;           
-        $post = DB::table('students')         
-        ->where('nama','like',"%".$cari."%")         
+        $post = DB::table('jadwal')         
+        ->where('waktu','like',"%".$cari."%")         
         ->paginate(); 
  
-        return view('students.index',['students' => $post]);     }
+        return view('pages.kajian',['kajians' => $post]);     }
 }

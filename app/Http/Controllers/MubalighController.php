@@ -85,5 +85,11 @@ class MubalighController extends Controller
     {
         //
     }
-    
+    public function searchmubaligh(Request $request)     
+    {   $cari = $request->search;           
+        $post = DB::table('mubaligh')         
+        ->where('nama','like',"%".$cari."%")         
+        ->paginate(); 
+        return view('pages.Mubaligh', ['mubaligh' => $post]);
+         }
 }

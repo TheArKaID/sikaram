@@ -15,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/', 'HomeController');
 Route::resource('/masjid', 'MasjidController');
+Route::get('/search', 'MasjidController@searchmasjid');
 Route::resource('/mubaligh', 'MubalighController');
+Route::get('/search', 'MubalighController@searchmubaligh');
 Route::resource('/kajian', 'KajianController');
+Route::get('/search', 'KajianController@searchkajian');
 
 
 Auth::routes();
@@ -30,6 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/admin/masjid', 'AdminController@storemasjid');
     Route::delete('/admin/masjid/{masjid}', 'AdminController@destroymasjid');
     Route::patch('/admin/masjid/{masjid}', 'AdminController@updatemasjid');
+    
 
     // Mubaligh Section
     Route::get('/admin/mubaligh', 'AdminController@mubaligh');
@@ -47,4 +51,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/admin/jadwal', 'AdminController@storejadwal');
     Route::delete('/admin/jadwal/{jadwal}', 'AdminController@destroyjadwal');
     Route::patch('/admin/jadwal/{jadwal}', 'AdminController@updatejadwal');
+
+    
 });
