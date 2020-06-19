@@ -158,11 +158,17 @@ class AdminController extends Controller
     {
         switch ($request->input('action')) {
             case 'edit':
+                $input = $request->all();
+                $tanggal = date_format(date_create($input['tanggal']), "D, d M Y");
+                $jam = $input['jam'];
+                $date = $tanggal ." Jam ". $jam;
+                $input['waktu'] = $date;
+
                 Jadwal::where('id', $jadwal->id)
                 ->update([
                 'id_mubaligh' => $request->id_mubaligh,
                 'id_masjid' => $request->id_masjid,
-                'waktu' => $request->waktu,
+                'waktu' => $input['waktu'],
                 'tema' => $request->tema
                 ]);
                 return redirect('/admin/jadwal') ->with ('status', 'Data Jadwal Berhasil Diubah!');

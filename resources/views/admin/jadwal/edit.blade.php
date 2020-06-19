@@ -31,10 +31,14 @@
                       <label for="nama">Masjid</label>
                       {!! Form::select('id_masjid', $masjid, $jadwal -> id_masjid, array('class' => 'form-control','id' => 'id_masjid'))!!}
                   </div>
-                    <div class="form-group">
-                      <label for="nama">Tanggal</label>
-                      <input type="date" class="form-control" id="waktu" name="waktu" value="{{ $jadwal -> waktu}}">
-                    </div>
+                  <div class="form-group">
+                    <label for="nama">Tanggal</label>
+                    <input type="date" class="form-control" id="tanggal" name="tanggal">
+                  </div>
+                  <div class="form-group">
+                    <label for="nama">Jam</label>
+                    <input type="time" class="form-control" id="jam" name="jam">
+                  </div>
                     <div class="form-group">
                       <label for="nama">Tema</label>
                       <input type="text" class="form-control" id="tema" name="tema" value="{{ $jadwal -> tema}}">
