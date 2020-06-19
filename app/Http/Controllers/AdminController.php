@@ -73,6 +73,7 @@ class AdminController extends Controller
                 $jam = $input['jam'];
                 $date = $tanggal ." Jam ". $jam;
                 $input['waktu'] = $this->convertMonth($date);
+                $input['waktu'] = $this->convertDay($date);
 
                 Jadwal::create($input);
                 return redirect('/admin/jadwal') ->with ('status', 'Jadwal Kajian berhasil ditambahkan');
@@ -163,6 +164,7 @@ class AdminController extends Controller
                 $jam = $input['jam'];
                 $date = $tanggal ." Jam ". $jam;
                 $input['waktu'] = $this->convertMonth($date);
+                $input['waktu'] = $this->convertDay($date);
 
                 Jadwal::where('id', $jadwal->id)
                 ->update([
@@ -214,10 +216,28 @@ class AdminController extends Controller
             'Nov' => "November",
             'Dec' => "Desember"
         ];
-        $result = "";
         foreach ($bulans as $old => $new) {
             if(strpos($data, $old) !== false){
-                return $result = str_replace($old, $new, $data);
+                return str_replace($old, $new, $data);
+            }
+        }
+    }
+
+    public function convertDay($data)
+    {
+        $days = [
+            'Sun' => "Ahad",
+            'Mon' => "Senin",
+            'Tue' => "Selasa",
+            'Wed' => "Rabu",
+            'Thu' => "Kamis",
+            'Fri' => "Jumat",
+            'Sat' => "Sabtu"
+        ];
+        $result = "";
+        foreach ($days as $old => $new) {
+            if(strpos($data, $old) !== false){
+                return str_replace($old, $new, $data);
             }
         }
     }
