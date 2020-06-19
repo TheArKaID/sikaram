@@ -69,10 +69,10 @@ class AdminController extends Controller
         switch ($request->input('action')) {
             case 'tambah':
                 $input = $request->all();
-                $tanggal = date_format(date_create($input->tanggal), "D, d M Y");
-                $jam = $input->jam;
+                $tanggal = date_format(date_create($input['tanggal']), "D, d M Y");
+                $jam = $input['jam'];
                 $date = $tanggal ." Jam ". $jam;
-                $input->waktu = $date;
+                $input['waktu'] = $date;
 
                 Jadwal::create($input);
                 return redirect('/admin/jadwal') ->with ('status', 'Jadwal Kajian berhasil ditambahkan');
