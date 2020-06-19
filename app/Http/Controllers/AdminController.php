@@ -54,15 +54,8 @@ class AdminController extends Controller
     {
         switch ($request->input('action')) {
             case 'tambah':
-                $input = $request->all();
-                $tanggal = date_format(date_create($input->tanggal), "D, d M Y");
-                $jam = $input->jam;
-                $date = $tanggal ." Jam ". $jam;
-                $input->waktu = $date;
-                
-                Masjid::create($input);
-
-                return redirect('/admin/masjid') ->with ('status', 'Jadwal Kajian berhasil ditambahkan');
+                Masjid::create($request->all());
+                return redirect('/admin/masjid') ->with ('status', 'Data masjid berhasil ditambahkan');
                 break;
     
             case 'kembali':
@@ -75,8 +68,14 @@ class AdminController extends Controller
     {
         switch ($request->input('action')) {
             case 'tambah':
-                Jadwal::create($request->all());
-                return redirect('/admin/jadwal') ->with ('status', 'Data Jadwal berhasil ditambahkan');
+                $input = $request->all();
+                $tanggal = date_format(date_create($input->tanggal), "D, d M Y");
+                $jam = $input->jam;
+                $date = $tanggal ." Jam ". $jam;
+                $input->waktu = $date;
+
+                Jadwal::create($input);
+                return redirect('/admin/jadwal') ->with ('status', 'Jadwal Kajian berhasil ditambahkan');
                 break;
     
             case 'kembali':
