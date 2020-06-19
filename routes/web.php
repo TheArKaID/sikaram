@@ -13,11 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/', 'HomeController');
-Route::resource('/masjid', 'MasjidController');
-Route::resource('/mubaligh', 'MubalighController');
-Route::resource('/kajian', 'KajianController');
+Route::get('/', 'HomeController@index');
 
+Route::get('/masjid', 'MasjidController@index');
+Route::get('/masjid/search', 'MasjidController@search');
+
+Route::get('/mubaligh', 'MubalighController@index');
+Route::get('/mubaligh/search', 'MubalighController@search');
+
+Route::get('/kajian', 'KajianController@index');
+Route::get('/kajian/search', 'KajianController@search');
 
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {

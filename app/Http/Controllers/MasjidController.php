@@ -19,10 +19,11 @@ class MasjidController extends Controller
         return view('pages.masjid', ['masjids' => $masjids]);
     }
 
-    public function search(Request $request)
+    public function search()
     {   
-        $cari = $request->search;
-        $post = DB::table('students')->where('nama','like',"%".$cari."%")->paginate(); 
+        $cari = $_GET['search'];
+        $masjids = Masjid::where('nama','like',"%".$cari."%")->paginate(); 
  
-        return view('students.index',['students' => $post]);     }
+        return view('pages.masjid',['masjids' => $masjids]);
+    }
 }

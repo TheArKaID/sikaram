@@ -9,12 +9,11 @@
 
             <div class="row">     
             <div class="col-md-8"> 
-
             </div>         
                 <div class="col-md-4">             
-                    <form action="/search" method="get">                 
+                    <form action="/mubaligh/search" method="get">                 
                         <div class="input-group mt-4">                    
-                         <input type="search" name="search" class="form-control">                     
+                         <input type="search" name="search" class="form-control" value="{{ isset($_GET['search']) ? $_GET['search'] : '' }}">                     
                             <span class="input-group-prepend">                         
                                 <button type="submit" class="btn btn-success">Search</button>                     
                             </span>                 
