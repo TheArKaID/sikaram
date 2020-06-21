@@ -12,11 +12,11 @@
             </div>
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/masjid">Masjid</a></li>
-                    <li><a href="/kajian">Jadwal</a></li>
-                    <li><a href="/mubaligh">Mubaligh</a></li>
-                    <li class="dropdown">
+                    <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/">Home</a></li>
+                    <li class="{{ Request::is('masjid') ? 'active' : '' }}"><a href="/masjid">Masjid</a></li>
+                    <li class="{{ Request::is('kajian') ? 'active' : '' }}"><a href="/kajian">Jadwal</a></li>
+                    <li class="{{ Request::is('mubaligh') ? 'active' : '' }}"><a href="/mubaligh">Mubaligh</a></li>
+                    <li class="dropdown{{ (Request::is('login') || Request::is('register')) ? ' active' : '' }}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="/login">Login</a></li>
