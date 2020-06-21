@@ -16,7 +16,13 @@
                     <li><a href="/masjid">Masjid</a></li>
                     <li><a href="/kajian">Jadwal</a></li>
                     <li><a href="/mubaligh">Mubaligh</a></li>
-                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/register">Register</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
