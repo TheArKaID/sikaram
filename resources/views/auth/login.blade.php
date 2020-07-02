@@ -1,5 +1,15 @@
 @extends('layouts.default')
+@section('styles')
+    <style>
+      .tb-nim{
+        text-align: end;
+      }
 
+      .tb-c{
+        width: 10px;
+      }
+    </style>
+@endsection
 @section('content')
 <section id="contact-page">
   <div class="container">
@@ -45,6 +55,41 @@
         </form>
       </div>
       <div class="col-md-5"></div>
+    </div>
+    <div class="row">
+      <table class="table table-responsive table-dark">
+        <tr>
+          <td class="tb-nim">20170140004</td>
+          <td class="tb-c"> | </td>
+          <td>Khairun Nisa</td>
+        </tr>
+        <tr>
+          <td class="tb-nim">20170140013</td>
+          <td class="tb-c"> | </td>
+          <td>Qodri Aziz</td>
+        </tr>
+        <tr>
+          <td class="tb-nim">20170140020</td>
+          <td class="tb-c"> | </td>
+          <td>M. Thoriq Fadlullah</td>
+        </tr>
+        <tr>
+          <td class="tb-nim">20170140025</td>
+          <td class="tb-c"> | </td>
+          <td>Farisan Azizi</td>
+        </tr>
+        <tr>
+          <td class="tb-nim">20170140034</td>
+          <td class="tb-c"> | </td>
+          <td>Galuh Nurvan Saputra</td>
+        </tr>
+        <tr>
+          <td class="tb-nim">20170140037</td>
+          <td class="tb-c"> | </td>
+          <td>Arifia Kasastra R</td>
+        </tr>
+
+      </table>
     </div>
   </div>
 </section>
